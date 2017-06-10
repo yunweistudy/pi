@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+</head>
+<body>
+
+这里是FORM表单
+<form name="form" method="post" enctype="multipart/form-data" action="/form/">
+{% csrf_token %}
+    <table>
+
+        {% for i in form %}
+           <tr><td>{{ i.label }}</td><td>{{ i }}</td></tr>
+        {% endfor %}
+        </table>
+
+<input type="submit" value="提交">
+</form>
+</body>
+</html>
