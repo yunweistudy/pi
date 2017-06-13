@@ -10,4 +10,9 @@ class ProfileForm(forms.Form):
 class Myform(forms.Form):
     owner=forms.CharField(max_length=50)
     filename=forms.FileField()
+class chunkform(forms.Form):
+    store=forms.CharField(max_length=20,)
+    addr=forms.CharField(max_length=20)
+    sql=forms.FileField()
+
 

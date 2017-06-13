@@ -32,5 +32,7 @@ urlpatterns = [
     url(r'^mem/',views.mem,name='mem'),
     url(r'mmail/',views.mmail,name='mmail'),
     url(r'^ppe/',views.ppe,name='ppe'),
-    url(r'^getter',views.getter,name='getter')
+    url(r'^getter',views.getter,name='getter'),
+    url(r'^index/',bviews.index,name='index'),
+    url(r'^chunk/',bviews.chunk,name='chunk')
 ]

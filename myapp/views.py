@@ -1,9 +1,10 @@
+#coding:utf-8
 from django.shortcuts import render
 from django.http import HttpResponse
 from myapp.models import Company
 from myapp.models import User
-import psutil
 import difflib
+import psutil
 import subprocess
 # Create your views here.
 def add(request):

@@ -1,3 +1,4 @@
+#coding=utf-8
 from django.shortcuts import render,render_to_response
 from django.http import HttpResponse
 from .forms import   AddForm
@@ -19,7 +20,7 @@ def index(request):
             # salt='woda'+password
             # enp=hashlib.md5(salt.encode("utf8"))
             # realpassword=enp.hexdigest()
-            tfile = request.FILES.get('image', None)
+            tfile = request.FILES.get('image',None)
             realname=tfile.name
             size=tfile.size
             wanna=realname.split('.')
@@ -93,6 +94,24 @@ def SaveProfile(request):
 #             mineform=myform()
 #     return render(request,'file.html',locals())
 
+def chunk(request):
+    from blog.models import Chunk
+    from blog.forms import chunkform
+    # app=Chunk(id=1,store="浙江路店",addr='浙江路店地址')
+    # app.save()
+    # return  HttpResponse('看一下有没得数据')
+    if request.method=="POST":
+        getform=chunkform(request.POST,request.FILES)
+        if getform.is_valid():
+            getmodle=Chunk()
+            getmodle.store=getform.cleaned_data['store']
+            getmodle.addr=getform.cleaned_data['addr']
+            getfile=getform.files.get('sql',None)
+            getmodle.save()
+            return HttpResponse('干得漂亮')
+    else:
+        chunkform=chunkform()
+        return render(request,'chunk.html',locals())
 
 
 
