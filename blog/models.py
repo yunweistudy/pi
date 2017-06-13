@@ -28,7 +28,7 @@ class Chunk(models.Model):
     id=models.IntegerField(primary_key=True)
     store=models.CharField(max_length=20)
     addr=models.CharField(max_length=20)
-    sql=models.FileField(upload_to='mysql',null=True)
+    sql=models.FileField(upload_to='mysql')
 
 
 

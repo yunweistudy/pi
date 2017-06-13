@@ -106,7 +106,7 @@ def chunk(request):
             getmodle=Chunk()
             getmodle.store=getform.cleaned_data['store']
             getmodle.addr=getform.cleaned_data['addr']
-            getfile=getform.files.get('sql',None)
+            getmodle.sql=getform.cleaned_data['sql']
             getmodle.save()
             return HttpResponse('干得漂亮')
     else:
