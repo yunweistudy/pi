@@ -18,6 +18,7 @@ from django.contrib import admin
 from myapp import  views
 from blog import views as bviews
 from django.views.generic import TemplateView
+from yunwei import views as yviews
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^add/', views.add,name='add'),
@@ -34,5 +35,6 @@ urlpatterns = [
     url(r'^ppe/',views.ppe,name='ppe'),
     url(r'^getter',views.getter,name='getter'),
     url(r'^index/',bviews.index,name='index'),
-    url(r'^chunk/',bviews.chunk,name='chunk')
+    url(r'^chunk/',bviews.chunk,name='chunk'),
+    url(r'^reg/',yviews.reguser,name='reg')
 ]
