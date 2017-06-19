@@ -5,11 +5,13 @@ from django.db import models
 
 # Create your models here.
 class user(models.Model):
-    id=models.IntegerField(u'id',auto_created=True,primary_key=True,)
+    # id=models.IntegerField(u'id',auto_created=True,primary_key=True,)
     user=models.CharField(u'用户名',max_length=20,)
     password=models.CharField(u'密码',max_length=20,default='hello')
     group=models.CharField(u'组',max_length=20,null=False)
     tel=models.CharField(u'电话',max_length=20)
+    email=models.EmailField(null='non')
+
 class server(models.Model):
     id=models.IntegerField(auto_created=True,primary_key=True)
     ip=models.CharField(max_length=32)

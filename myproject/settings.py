@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'myapp',
     'blog',
     'yunwei',
+
 ]
 
 MIDDLEWARE = [

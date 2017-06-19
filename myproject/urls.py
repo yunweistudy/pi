@@ -36,5 +36,6 @@ urlpatterns = [
     url(r'^getter',views.getter,name='getter'),
     url(r'^index/',bviews.index,name='index'),
     url(r'^chunk/',bviews.chunk,name='chunk'),
-    url(r'^reg/',yviews.reguser,name='reg')
+    url(r'^reg/',yviews.reguser,name='reg'),
+    url(r'^getpara/',yviews.getpara,name='getpara')
 ]
