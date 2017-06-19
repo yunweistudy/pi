@@ -1,8 +1,6 @@
 from django import forms
 class userform(forms.Form):
-    # id=forms.IntegerField()
     user=forms.CharField(max_length=20)
-    group=forms.CharField(max_length=20)
     tel=forms.CharField(max_length=20)
     password = forms.CharField(label=("Password"), widget=forms.PasswordInput)
     email=forms.EmailField()

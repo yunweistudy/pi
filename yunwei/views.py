@@ -13,7 +13,7 @@ def reguser(request):
             getmodel.password=getform.cleaned_data['password']
             getmodel.tel=getform.cleaned_data['tel']
             getmodel.email=getform.cleaned_data['email']
-            getmodel.group=getform.cleaned_data['group']
+            getmodel.group='null'
             getmodel.save()
             return  HttpResponse('注册用户成功')
         else:
@@ -25,4 +25,7 @@ def getpara(request):
     name=request.GET['name']
     nick=request.GET['nick']
     return HttpResponse(name+nick)
+def showuser(request):
+    show=user.objects.all()
+    return HttpResponse(show)
 

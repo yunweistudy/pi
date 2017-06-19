@@ -11,6 +11,8 @@ class user(models.Model):
     group=models.CharField(u'组',max_length=20,null=False)
     tel=models.CharField(u'电话',max_length=20)
     email=models.EmailField(null='non')
+    def __unicode__(self):
+        return self.user
 
 class server(models.Model):
     id=models.IntegerField(auto_created=True,primary_key=True)
