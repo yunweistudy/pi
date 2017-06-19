@@ -38,5 +38,7 @@ urlpatterns = [
     url(r'^chunk/',bviews.chunk,name='chunk'),
     url(r'^reg/',yviews.reguser,name='reg'),
     url(r'^getpara/',yviews.getpara,name='getpara'),
-    url(r'^showuser/',yviews.showuser,name='showuser')
+    url(r'^showuser/',yviews.showuser,name='showuser'),
+    url(r'^del/',yviews.deluser,name='deluser'),
+    url(r'^upuser/',yviews.upuser,name='upuser'),
 ]

@@ -27,5 +27,19 @@ def getpara(request):
     return HttpResponse(name+nick)
 def showuser(request):
     show=user.objects.all()
-    return HttpResponse(show)
+    return render(request,'showuser.html',locals())
+# Person.objects.all()[:10] 切片操作，获取10个人，不支持负索引，切片可以节约内存
+def deluser(request):
+    deluser=user.objects.filter(id=1)
+    deluser.delete()
+    return HttpResponse('good')
+def upuser(request):
+    upuser=user.objects.filter(id=2)
+    upuser.update(id=1)
+    # models.UserInfo.objects.filter(user='yangmv').update(pwd='520')
+    # 或者
+    # obj = models.UserInfo.objects.get(user='yangmv')
+    # obj.pwd = '520'
+    # obj.save()
+    return  HttpResponse('upgood')
 
