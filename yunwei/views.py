@@ -3,7 +3,9 @@ from __future__ import unicode_literals
 from django.http import HttpResponse
 from django.shortcuts import render
 from yunwei.models import  user
+from yunwei.models import  version as mversion
 from yunwei.regform import userform
+from yunwei.version_from import version as versionform
 def reguser(request):
     if request.method=='POST':
         getform=userform(request.POST)
@@ -42,4 +44,20 @@ def upuser(request):
     # obj.pwd = '520'
     # obj.save()
     return  HttpResponse('upgood')
+def version(request):
+    if request.method=='POST':
+        getform=versionform(request.POST,request.FILES)
+        if getform.is_valid():
+            getmodel=mversion()
+            getmodel.project=getform.cleaned_data['project']
+            getmodel.version=getform.cleaned_data['version']
+            getmodel.zipfile=getform.cleaned_data['zipfile']
+            getmodel.install_root=getform.cleaned_data['install_root']
+            getmodel.save()
+            return HttpResponse("添加版本成功！")
+        else:
+            return  HttpResponse('添加失败')
+    else:
+        version_form=versionform()
+        return render(request,'version.html',locals())
 

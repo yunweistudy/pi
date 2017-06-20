@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>版本控制 </title>
+</head>
+<body>
+<form enctype="multipart/form-data" method="post" action="/version/">
+    {% csrf_token %}
+<table>
+
+<tr><td>所属项目:</td><td>{{ version_form.project }}</td></tr>
+    <tr><td>版本号:</td><td>{{ version_form.version }}</td></tr>
+    <tr><td>安装路径:</td><td>{{ version_form.install_root }}</td></tr>
+    <tr><td>你的zip打包:</td><td>{{ version_form.zipfile }}</td></tr>
+    <tr ><td><input type="submit" value="提交"></td></tr>
+
+    </table>
+</form>
+</body>
+</html>

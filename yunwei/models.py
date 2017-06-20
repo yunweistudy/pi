@@ -13,16 +13,23 @@ class user(models.Model):
     email=models.EmailField(null='non')
 
 class server(models.Model):
-    id=models.IntegerField(auto_created=True,primary_key=True)
     ip=models.CharField(max_length=32)
     username=models.CharField(max_length=20)
     password=models.CharField(max_length=20)
-    allow_group=models.CharField(max_length=20)
+    own_group=models.CharField(max_length=20)
     hostname=models.CharField(max_length=20,default='localhost')
 class history(models.Model):
     hostname=models.CharField(max_length=20)
     command=models.CharField(max_length=300)
     who=models.CharField(max_length=20)
     date=models.DateTimeField(auto_now=True)
+class version(models.Model):
+    project=models.CharField(max_length=20)
+    version=models.CharField(max_length=20)
+    #安装路径
+    install_root=models.CharField(max_length=20)
+    zipfile=models.FileField(upload_to='zipfile')
+
+
 
 

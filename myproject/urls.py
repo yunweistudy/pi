@@ -41,4 +41,5 @@ urlpatterns = [
     url(r'^showuser/',yviews.showuser,name='showuser'),
     url(r'^del/',yviews.deluser,name='deluser'),
     url(r'^upuser/',yviews.upuser,name='upuser'),
+    url(r'^version/',yviews.version,name='version'),
 ]
