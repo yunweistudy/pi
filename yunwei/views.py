@@ -6,6 +6,8 @@ from yunwei.models import  user
 from yunwei.models import  version as mversion
 from yunwei.regform import userform
 from yunwei.version_from import version as versionform
+from yunwei.models import server as servermodel
+from yunwei.server_form import  server as serverfom
 def reguser(request):
     if request.method=='POST':
         getform=userform(request.POST)
@@ -60,4 +62,53 @@ def version(request):
     else:
         version_form=versionform()
         return render(request,'version.html',locals())
+def server(request):
+    if request.method=='POST':
+        postform=serverfom(request.POST)
+        if postform.is_valid():
+            getmodel=servermodel()
+            getmodel.ip=postform.cleaned_data['ip']
+            getmodel.username=postform.cleaned_data['username']
+            getmodel.password=postform.cleaned_data['password']
+            getmodel.hostname=postform.cleaned_data['hostname']
+            getmodel.own_group=postform.cleaned_data['own_group']
+            getmodel.save()
+            return HttpResponse('good,添加服务器成功')
+        else:
+            return HttpResponse('bad,数据不合法')
+    else:
+        getform=serverfom()
+        return render(request,'server.html',{'getform':getform})
+
+def index(request):
+    return render(request,'index.html',)
+def zhishu(request):
+    def zhisu2(a=9):
+        b=a-1
+        list=[]
+        while b>0:
+            if a%b==0:
+                list.append(a//b)
+                zhisu2(b)
+            else:
+                pass
+        list.append(b)
+        return list
+    return HttpResponse(list)
+def fenshu(request):
+    list1=[2,1,4]
+    list2=[3,4,5,6]
+    list11=sorted(list1)
+    list22=sorted(list2)
+    len1=list1.__len__()
+    a=0
+    b=0
+    if list11[0] < 1000 and list11[len1-1] >0:
+        pass
+    else:
+        return HttpResponse('所有数据必须得在0-1000范围内')
+
+
+
+
 

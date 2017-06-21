@@ -19,7 +19,10 @@ from myapp import  views
 from blog import views as bviews
 from django.views.generic import TemplateView
 from yunwei import views as yviews
+import settings
+
 urlpatterns = [
+
     url(r'^admin/', admin.site.urls),
     url(r'^add/', views.add,name='add'),
     url(r'^adduser',views.adduser,name='adduser'),
@@ -34,7 +37,6 @@ urlpatterns = [
     url(r'mmail/',views.mmail,name='mmail'),
     url(r'^ppe/',views.ppe,name='ppe'),
     url(r'^getter',views.getter,name='getter'),
-    url(r'^index/',bviews.index,name='index'),
     url(r'^chunk/',bviews.chunk,name='chunk'),
     url(r'^reg/',yviews.reguser,name='reg'),
     url(r'^getpara/',yviews.getpara,name='getpara'),
@@ -42,4 +44,9 @@ urlpatterns = [
     url(r'^del/',yviews.deluser,name='deluser'),
     url(r'^upuser/',yviews.upuser,name='upuser'),
     url(r'^version/',yviews.version,name='version'),
+    url(r'^server/',yviews.server,name='server'),
+    url(r'^index',yviews.index,name='index'),
+    url(r'^fenshu',yviews.fenshu,name='fenshu'),
+    url(r'^zhishu',yviews.zhishu,name='zhishu')
+
 ]

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加服务器</title>
+</head>
+<body>
+<form action="/server/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ getform }}
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>
