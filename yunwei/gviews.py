@@ -1,42 +1,39 @@
 # -*- coding:utf-8 -*-
-# from django.http import HttpResponse
-# from django.shortcuts import render
-# from fabric.api import *
-# from fabric.contrib import django
-# from fabric.contrib.console import confirm
-# env.user='root'
-# env.password='hello'
-# env.hosts=['192.168.2.138']
-# #执行本地命令
-# def locala(request):
-#     local('touch /root/b1.txt ')
-#     local('touch /root/b2.txt ')
-#     a='good'
-#     return HttpResponse(a)
-# #执行远程命令
-# @hosts('root@192.168.2.138')
-# def remotea(request):
-#     run('mkdir -p /home/wodada')
-#     run('mkdir -p /home/wodada1')
-#     run('mkdir -p /home/wodada2')
-#     return HttpResponse("pang")
-
+#批量执行命令
 from fabric.api import *
 from fabric.contrib import django
 from django.http import HttpResponse
+from fabric.contrib.console import confirm
+from fabric.context_managers import *
 django.project('myproject')
 env.user='root'
-env.password='hello'
+env.passwords={
+    'root@192.168.2.138:22':'world',
+    'root@192.168.0.11:22':'123456'
+}
+# env.password='hello' 全部密码一样是这样设置
 # env.hosts=["192.168.2.138"]
 # env.host="192.168.2.138"
-hosts=['192.168.2.236','192.168.2.138']
+hosts=['192.168.2.138','192.168.0.11']
 # env.host_string='192.168.2.236'
 def locala(request):
     return HttpResponse('locala')
 def remotea(request):
-    print("env:", env.hosts, env.host, env.host_string)
-    # run('mkdir -p /data/go/go/do2')
+    list1=[]
     for i in hosts:
         env.host_string=i
-        run('mkdir -p /data/come1')
-    return HttpResponse('hello')
+        a=run('cat /root/a.txt')
+        list1.append(a)
+    return HttpResponse(list1)
+#结束批量执行命令
+#文件上传
+localfile='/root/b.txt'
+remotepath='/home/'
+def putfile(request):
+    for i in hosts:
+        env.host_string = i
+        result=put(localfile,remotepath)
+    if result:
+        return HttpResponse('good,上传成功')
+    else:
+        return HttpResponse('bad，上传失败')

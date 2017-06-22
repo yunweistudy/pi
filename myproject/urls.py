@@ -20,6 +20,7 @@ from blog import views as bviews
 from django.views.generic import TemplateView
 from yunwei import views as yviews
 from yunwei.gviews import remotea
+from yunwei.gviews import putfile
 import settings
 from yunwei.gviews import locala
 
@@ -50,5 +51,6 @@ urlpatterns = [
     url(r'^index',yviews.index,name='index'),
     url(r'locala',locala,name='locala'),
     url(r'remotea',remotea,name='remote'),
+    url(r'putfile', putfile, name='putfile'),
 
 ]
