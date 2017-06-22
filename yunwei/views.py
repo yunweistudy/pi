@@ -82,31 +82,8 @@ def server(request):
 
 def index(request):
     return render(request,'index.html',)
-def zhishu(request):
-    def zhisu2(a=9):
-        b=a-1
-        list=[]
-        while b>0:
-            if a%b==0:
-                list.append(a//b)
-                zhisu2(b)
-            else:
-                pass
-        list.append(b)
-        return list
-    return HttpResponse(list)
-def fenshu(request):
-    list1=[2,1,4]
-    list2=[3,4,5,6]
-    list11=sorted(list1)
-    list22=sorted(list2)
-    len1=list1.__len__()
-    a=0
-    b=0
-    if list11[0] < 1000 and list11[len1-1] >0:
-        pass
-    else:
-        return HttpResponse('所有数据必须得在0-1000范围内')
+
+
 
 
 

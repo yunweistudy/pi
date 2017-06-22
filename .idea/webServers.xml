@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="175ba69d-07ea-4158-9ffb-e429a2d5dac7" name="PYTHON" url="http://192.168.2.236">
+        <fileTransfer host="192.168.2.236" port="22" rootFolder="/data/pi" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

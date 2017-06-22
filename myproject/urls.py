@@ -19,7 +19,9 @@ from myapp import  views
 from blog import views as bviews
 from django.views.generic import TemplateView
 from yunwei import views as yviews
+from yunwei.gviews import remotea
 import settings
+from yunwei.gviews import locala
 
 urlpatterns = [
 
@@ -46,7 +48,7 @@ urlpatterns = [
     url(r'^version/',yviews.version,name='version'),
     url(r'^server/',yviews.server,name='server'),
     url(r'^index',yviews.index,name='index'),
-    url(r'^fenshu',yviews.fenshu,name='fenshu'),
-    url(r'^zhishu',yviews.zhishu,name='zhishu')
+    url(r'locala',locala,name='locala'),
+    url(r'remotea',remotea,name='remote'),
 
 ]
