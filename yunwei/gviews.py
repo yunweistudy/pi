@@ -29,11 +29,14 @@ env.user='root'
 env.password='hello'
 # env.hosts=["192.168.2.138"]
 # env.host="192.168.2.138"
-env.host_string="192.168.2.138"
+hosts=['192.168.2.236','192.168.2.138']
+# env.host_string='192.168.2.236'
 def locala(request):
     return HttpResponse('locala')
-
 def remotea(request):
     print("env:", env.hosts, env.host, env.host_string)
-    run('mkdir -p /data/go/go/do2')
+    # run('mkdir -p /data/go/go/do2')
+    for i in hosts:
+        env.host_string=i
+        run('mkdir -p /data/come1')
     return HttpResponse('hello')
