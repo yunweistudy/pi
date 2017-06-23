@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chunkform</title>
+</head>
+<body>
+this is chunkform
+<form name="chunkfor" enctype="multipart/form-data" method="post"  accept="sql,jpg" action="/chunk/">
+    {% csrf_token %}
+    <table>
+
+         {% for i in chunkform %}
+           <tr><td>{{ i.label }}</td><td>{{ i }}</td></tr>
+
+        {% endfor %}
+
+
+
+    </table>
+ <input type="submit" value="提交">
+</form>
+</body>
+</html>

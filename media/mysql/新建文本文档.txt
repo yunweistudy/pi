@@ -1,0 +1,9 @@
+####centos6###
+rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+sed  -i 's/enforcing/disabled/g'  /etc/selinux/config
+setenforce 0
+yum install -y vim gcc
+###×¼±¸php7
+rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+                rpm -ivh http://rpms.remirepo.net/enterprise/remi-release-6.rpm
+                yum install php70-php php70-php-pear php70-php-bcmath php70-php-pecl-jsond-devel php70-php-mysqlnd php70-php-gd php70-php-common php70-php-fpm php70-php-intl php70-php-cli php70-php php70-php-xml php70-php-opcache php70-php-pecl-apcu php70-php-pecl-jsond php70-php-pdo php70-php-gmp  php70-php-fpm.x86_64 php70-php-process php70-php-pecl-imagick php70-php-devel php70-php-mbstring php70-php-mcrypt gcc vim curl.x86_64 freetype.x86_64  gettext-devel.x86_64  gettext-libs.x86_64  libart_lgpl-devel.x86_64  libart_lgpl.x86_64 mhash.x86_64 mhash-devel.x86_64 nginx.x86_64  openssl.x86_64  pcre.x86_64 php70-php-pecl-memcached.x86_64 php70-php-pecl-redis.x86_64  php70-php-json.x86_64 php70-php-pecl-redis.x86_64 php70-php-fpm.x86_64  -y 

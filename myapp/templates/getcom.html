@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getcom</title>
+</head>
+<body>
+这里是GETCOM
+{% for i in coms %}
+    {{ i.id }}
+    {{ i.full_name }}
+    {{ i.address }}
+    {{ i.tel }}<br>
+{% endfor %}
+
+</body>
+</html>

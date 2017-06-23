@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+</head>
+<body>
+<table>
+<form action="/reg/" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+{#    {% for i in formini %}#}
+{#        <tr>#}
+{#            <td>#}
+{#                {{ i.label }}#}
+{#            </td>#}
+{#            <td>#}
+{#                {{ i }}#}
+{#            </td>#}
+{#        </tr>#}
+{##}
+{#    {% endfor %}#}
+    <tr><td>用户名：</td><td >{{ formini.user }}</td></tr>
+     <tr><td>密码：</td><td>{{ formini.password }}</td></tr>
+     <tr><td>电话：</td><td>{{ formini.tel }}</td></tr>
+     <tr><td>邮箱：</td><td>{{ formini.email }}</td></tr>
+
+{#{{ formini }}#}
+    <tr ><td><input type="submit" value="走你"></td></tr>
+{#上面两种效果一样#}
+
+
+
+</form>
+</table>
+</body>
+</html>
