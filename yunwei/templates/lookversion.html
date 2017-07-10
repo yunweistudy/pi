@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block divright %}
+
+<table border="1">
+<tr><td>项目名</td><td>版本号</td><td>安装目录</td><td>对应文件</td><td>注释</td></tr>
+{% for i in ini_verson %}
+
+   <tr><td>{{ i.project }}</td><td>{{ i.version }}</td><td>{{ i.install_root }}</td><td>{{ i.zipfile }}</td><td>{{ i.note }}</td></tr>
+
+{% endfor %}
+</table>
+{% endblock %}

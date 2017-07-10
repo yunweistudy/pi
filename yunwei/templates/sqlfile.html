@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+
+{% block divright %}
+    <form method="post" enctype="multipart/form-data" action="/dosqlfile/">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>上传人员</td>
+                <td>{{ ini_sqlfile_form.upuser }}</td>
+            </tr>
+            <tr>
+                <td>所属项目</td>
+                <td>{{ ini_sqlfile_form.belong }}</td>
+            </tr>
+            <tr>
+                <td>所属组</td>
+                <td>{{ ini_sqlfile_form.group }}</td>
+            </tr>
+            <tr>
+                <td>上传文件</td>
+                <td>{{ ini_sqlfile_form.upfile }}</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>{{ ini_sqlfile_form.commit }}</td>
+            </tr>
+
+        <tr>
+            <td>
+                <input type="reset" value="重置">
+            </td>
+            <td>
+                <input type="submit" value="提交">
+            </td>
+        </tr>  </table>
+    </form>
+
+
+{% endblock %}

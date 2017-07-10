@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+{% block divright %}
+<form action="/runsql/" enctype="multipart/form-data" method="post">
+{% csrf_token %}
+    <table>
+
+        <tr><td> 选择服务器：</td>
+
+                    {% for i in ini_linuxser %}
+                       <td> <input type="checkbox" name="linuxserver" value="{{ i.address }}"></td><td>{{ i.address }}</td>
+                    {% endfor %}
+
+
+        </tr>
+
+        <tr><td> 选择数据库文件：</td>
+            <td><select name="sqlfile">
+                    {% for m in ini_sqlfile %}
+                        <option value="{{ m.upfile }}">{{ m.upfile }}</option>
+                    {% endfor %}
+              </select>
+             </td>
+        </tr>
+<tr><td><input type="reset" value="重置"></td><td><input type="submit" value="提交"></td></tr>
+
+    </table>
+
+</form>
+{% endblock %}

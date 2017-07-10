@@ -1,21 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>版本控制 </title>
-</head>
-<body>
-<form enctype="multipart/form-data" method="post" action="/version/">
-    {% csrf_token %}
+{% extends 'index.html' %}
+
+{% block divright %}
+{#<table>#}
+{#    <tr>已有项目</tr>#}
+{#   {% for bb in ini_model %}#}
+{#      <tr> <td>项目名：</td><td>{{ bb.project }}</td>#}
+{#           <td>版本号：</td><td>{{ bb.version }}</td>#}
+{#           <td>部署路径：</td><td>{{ bb.install_root }}</td>#}
+{#           <td>部署文件</td><td>{{ bb.zipfile }}</td>#}
+{#           <td>更新时间</td><td>{{ bb.uptime }}</td>#}
+{##}
+{#      </tr>#}
+{#    {% endfor %}#}
+{##}
+{##}
+{#</table>#}
+<form method="post" action="/version/" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
 <table>
-
-<tr><td>所属项目:</td><td>{{ version_form.project }}</td></tr>
-    <tr><td>版本号:</td><td>{{ version_form.version }}</td></tr>
-    <tr><td>安装路径:</td><td>{{ version_form.install_root }}</td></tr>
-    <tr><td>你的zip打包:</td><td>{{ version_form.zipfile }}</td></tr>
-    <tr ><td><input type="submit" value="提交"></td></tr>
-
-    </table>
+     <tr><td>选择项目</td><td><select name="project">
+     #good,这里的name一定要手动写
+         {% for a in projects %}
+         <option value="{{ i.name}}">{{ i.name }}</option>
+         {% endfor %}
+     </select></td></tr>
+        <tr><td>版本号</td><td>{{ ini_form.version }}</td></tr>
+        <tr><td>安装目录</td><td>{{ ini_form.install_root }}</td></tr>
+        <tr><td>上传文件</td><td>{{ ini_form.zipfile }}</td></tr>
+        <tr><td>注释</td><td>{{ ini_form.note }}</td></tr>
+        <tr><td><input type="reset" value="全部重填"></td><td><input type="submit" value="提交"></td></tr>
+</table>
 </form>
-</body>
-</html>
+{% endblock %}

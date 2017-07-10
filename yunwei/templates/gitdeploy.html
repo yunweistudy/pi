@@ -1,0 +1,66 @@
+{% extends 'index.html' %}
+
+{% block divright %}
+<form  action="/git/"  method="post" enctype="multipart/form-data">
+{% csrf_token %}
+    <table>
+        <tr>
+           <td>选择需要部署的服务器</td>
+        </tr>
+          {% for i in ini_server_modle %}
+               <tr><td><input type="checkbox" value="{{ i.ip }}" name="servers">{{ i.hostname }}</td></tr>
+            {% endfor %}
+       <tr>
+        <td>请选择git服务器</td>
+       </tr>
+    <tr>
+        <td>
+            <select name="gitserver">
+             {% for k in gitser %}
+                     <option value=" {{ k.gitserver }}">{{ k.gitserver}}</option>
+               {% endfor %}
+            </select>
+        </td>
+    </tr>
+        <tr>
+            <td>选择需要部署的版本</td>
+        </tr>
+    <tr>
+    <td>
+          <select name="version">
+               {% for m in getver %}
+                     <option value=" {{ m.gitname }}">{{ m.gitname }}</option>
+               {% endfor %}
+        </select>
+    </td>
+    </tr>
+    <tr><td>选择部署的分支</td></tr>
+    <tr><td>
+        <select name="branch">
+            {% for oo in inibranch %}
+                     <option value=" {{ oo.gitbranch }}">{{ oo.gitbranch }}</option>
+               {% endfor %}
+        </select>
+    </td></tr>
+    <tr>
+            <td>请确认执行的门店数据库脚本<select name="possqlphp">
+                {% for ppp in iniposphp  %}
+                <option value="{{ ppp.possqlphp }}">{{ ppp.possqlphp }}</option>
+                    {% endfor %}
+            </select></td>
+
+    </tr>
+    <tr>
+
+            <td>请确认执行的中央数据库脚本<select name="mssqlphp">
+                {% for ppp in inimsphp  %}
+                <option value="{{ ppp.mssqlphp }}">{{ ppp.mssqlphp }}</option>
+                    {% endfor %}
+            </select></td>
+
+    </tr>
+    <tr><td><input name="action" value="deploy" type="hidden"></td></tr>
+    <tr><td><input type="reset"  value="重置"  >  </td><td><input  type="submit" value="提交"></td></tr>
+    </table>
+</form>
+{% endblock %}

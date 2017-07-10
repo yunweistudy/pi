@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block divright %}
+开始添加SQL服务器
+<form method="post" enctype="multipart/form-data" action="/sqlserver/">
+{% csrf_token %}
+    <table>
+        {% for i in ini_sqlform %}
+        <tr><td>{{ i.label }}</td><td>{{ i }}</td></tr>
+        {% endfor %}
+    <tr><td><input type="reset" value="重置"></td> <td><input type="submit" value="提交"></td></tr>
+
+    </table>
+
+</form>
+{% endblock %}

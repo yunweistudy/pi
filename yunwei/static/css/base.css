@@ -1,3 +1,23 @@
 body{
-    background-color: #a41515;
+    background-color: darkgray;
+}
+a:link {color: red ;text-decoration:none}
+a:visited {color: blue;text-decoration:none}
+a:hover {color: green;text-decoration:none}
+a:active {color: purple;text-decoration:none}
+.lefter{
+    width:10%;
+    height: 1024px;
+    float: left;
+    text-align: center;
+    background-color:black;
+    color: white;
+
+}
+.righter{
+    width:90%;
+    height: 1024px;
+    float: left;
+    text-align: left;
+    background-color: darkgray;
 }

@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+
+{% block divright %}
+<table>
+
+{% for i in myxiangmu %}
+   <tr>
+       <td>项目名： {{ i.name }}</td>
+    <td>项目负责人：{{ i.manager }}</td>
+    <td>创建时间：{{ i.createtime }}</td>
+    </tr>
+{% endfor %}
+
+</table>
+{% endblock %}

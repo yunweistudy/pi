@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block divright %}
+<table class="table">
+<tr><td >已有服务器：</td></tr>
+{% for ser in myserver %}
+  <tr align="left"><td>地址：</td><td  >{{ ser.ip }}</td><td>名称</td><td >{{ ser.hostname }}</td></tr>
+<br>
+{% endfor %}
+</table>
+{% endblock %}

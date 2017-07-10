@@ -1,15 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>添加服务器</title>
-</head>
-<body>
-<form action="/server/" method="post" enctype="multipart/form-data">
+{% extends 'index.html' %}
+
+{% block divright %}
+
+
+
+<form action="/linuxserver/" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ getform }}
+{#    {{ getform }}#}
+<table>
+    {% for i in getform %}
+        <tr><td>{{ i.label }}</td><td>{{ i }}</td></tr>
+    {% endfor %}
+</table>
     <input type="submit" value="提交">
 </form>
 
-</body>
-</html>
+{% endblock %}

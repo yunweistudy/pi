@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>vuetest</title>
+    <script  language="JavaScript" src="{% static 'js/vue.js' %}"></script>
+
+</head>
+<body>
+
+<div id="go">
+  <span>
+    <div id="app-2">
+  <span v-bind:title="message">
+    鼠标悬停几秒钟查看此处动态绑定的提示信息！
+  </span>
+</div>
+  </span>
+</div>
+</body>
+ <script>
+var app2 = new Vue({
+  el: '#app-2',
+  data: {
+    message: '页面加载于 ' + new Date()
+  }
+})
+            </script>
+
+</html>

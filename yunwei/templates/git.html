@@ -1,0 +1,16 @@
+
+{% extends 'index.html' %}
+
+{% block divright %}
+<form action="/git/" method="post"  enctype="multipart/form-data">
+{% csrf_token %}
+   <table>
+       {{ ini_git_form }}
+       <tr><td><input name="action" type="hidden" value="add"></td></tr>
+       <tr>
+           <td><input type="reset" value="重置"></td>
+           <td><input type="submit" value="提交"></td>
+       </tr>
+   </table>
+{% endblock %}
+</form>

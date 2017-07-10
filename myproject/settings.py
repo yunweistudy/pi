@@ -122,9 +122,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-Hans'
 
-
+FILE_CHARSET = 'utf-8'
+DEFAULT_CHARSET = 'utf-8'
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -142,7 +143,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
+default_encoding = 'utf-8'
 EMAIL_USE_TLS = False
 EMAIL_HOST = 'smtp.exmail.qq.com'
 EMAIL_PORT = 25

@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block divright %}
+<table>
+    <tr>
+        {% for i in ini_sqlserver_model %}
+            {{ i.name }},{{ i.manager }},{{ i.createtime }}
+        {% endfor %}
+    </tr>
+</table>
+{% endblock %}

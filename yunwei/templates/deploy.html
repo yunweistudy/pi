@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% block divright %}
+<form action="/deploy/" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<table>
+    <tr><td>请选择服务器:</td></tr>
+    {% for i in getserver %}
+    <tr><td><input type="checkbox" name="boxes" value="{{ i.ip }}"></td><td>{{ i.hostname }}</td></tr>
+    {% endfor %}
+    <tr><td>请选择项目:</td></tr>
+
+    <tr><td>
+        <select name="projects">
+        {% for m in getproject %}
+        <option value="{{ m.name }}">{{ m.name }}</option>
+        {% endfor %}
+    </select>
+    </td></tr>
+
+    <tr><td>请选择版本:</td></tr>
+    <tr><td>
+        <select name="versions">
+        {% for n in getversion %}
+        <option value="{{ n.version }}">{{ n.version }}</option>
+        {% endfor %}
+    </select>
+    </td></tr>
+<tr><td><input type="reset"value="重填"></td><td><input type="submit" value="提交"></td></tr>
+</table>
+</form>
+{% endblock %}

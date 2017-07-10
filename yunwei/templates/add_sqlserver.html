@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+
+{% block divright %}
+<form action="/sqlser/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+
+           <tr><td>数据库类型</td><td>{{ ini_sqlserver_form.type }}</td></tr>
+           <tr><td>地址</td><td>{{ ini_sqlserver_form.address }}</td></tr>
+           <tr><td>数据库用户名</td><td>{{ ini_sqlserver_form.user }}</td></tr>
+           <tr><td>数据库端口</td><td>{{ ini_sqlserver_form.port }}</td></tr>
+           <tr><td>密码</td><td>{{ ini_sqlserver_form.password }}</td></tr>
+         <tr><td>所属组</td><td>{{ ini_sqlserver_form.group }}</td></tr>
+
+        <tr><td>备注</td><td>{{ ini_sqlserver_form.commit }}</td></tr>
+           <tr><td><input type="reset" value="重置"></td><td><input type="submit" value="提交"></td></tr>
+   
+</table>
+</form>
+{% endblock %}

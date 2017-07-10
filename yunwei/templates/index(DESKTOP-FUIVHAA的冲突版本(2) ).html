@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>运维平台</title>
+    <style>
+        .nav a{
+            display: block;
+        }
+    </style>
+    <link href="{% static 'css/base.css' %}"  rel="stylesheet">
+</head>
+
+<body>
+    <script language="javascript">
+    function show_div1() {
+        var obj_div = document.getElementById("starlist1");
+        obj_div.style.display = (obj_div.style.display == 'none' || obj_div.style.display == '') ? 'block' : 'none';
+    }
+
+    function hide_div1() {
+        var obj_div = document.getElementById("starlist1");
+        obj_div.style.display = (obj_div.style.display == 'none') ? 'block' : 'none';
+    }
+    </script>
+    <script language="javascript">
+    function show_div2() {
+        var obj_div = document.getElementById("starlist2");
+        obj_div.style.display = (obj_div.style.display == 'none') ? 'block' : 'none';
+    }
+
+    function hide_div2() {
+        var obj_div = document.getElementById("starlist2");
+        obj_div.style.display = (obj_div.style.display == 'none') ? 'block' : 'none';
+    }
+    </script>
+    <script language="javascript">
+    function show_div3() {
+        var obj_div = document.getElementById("starlist3");
+        obj_div.style.display = (obj_div.style.display == 'none') ? 'block' : 'none';
+    }
+
+    function hide_div3() {
+        var obj_div = document.getElementById("starlist3");
+        obj_div.style.display = (obj_div.style.display == 'none') ? 'block' : 'none';
+    }
+    </script>
+    <script language="javascript">
+    function show_div4() {
+        var obj_div = document.getElementById("starlist4");
+        obj_div.style.display = (obj_div.style.display == 'none') ? 'block' : 'none';
+    }
+
+    function hide_div4() {
+        var obj_div = document.getElementById("starlist4");
+        obj_div.style.display = (obj_div.style.display == 'none') ? 'block' : 'none';
+    }
+    </script>
+    <script language="javascript">
+    function show_div5() {
+        var obj_div = document.getElementById("starlist5");
+        obj_div.style.display = (obj_div.style.display == 'none') ? 'block' : 'none';
+    }
+
+    function hide_div5() {
+        var obj_div = document.getElementById("starlist5");
+        obj_div.style.display = (obj_div.style.display == 'none') ? 'block' : 'none';
+    }
+    </script>
+    <script language="javascript">
+    function show_div6() {
+        var obj_div = document.getElementById("starlist6");
+        obj_div.style.display = (obj_div.style.display == 'none') ? 'block' : 'none';
+    }
+
+    function hide_div6() {
+        var obj_div = document.getElementById("starlist6");
+        obj_div.style.display = (obj_div.style.display == 'none') ? 'block' : 'none';
+    }
+    </script>
+    <script language="javascript">
+    function show_div7() {
+        var obj_div = document.getElementById("starlist7");
+        obj_div.style.display = (obj_div.style.display == 'none') ? 'block' : 'none';
+    }
+
+    function hide_div7() {
+        var obj_div = document.getElementById("starlist7");
+        obj_div.style.display = (obj_div.style.display == 'none') ? 'block' : 'none';
+    }
+    </script>
+    <script language="javascript">
+    function show_div8() {
+        var obj_div = document.getElementById("starlist8");
+        obj_div.style.display = (obj_div.style.display == 'none') ? 'block' : 'none';
+    }
+
+    function hide_div8() {
+        var obj_div = document.getElementById("starlist8");
+        obj_div.style.display = (obj_div.style.display == 'none') ? 'block' : 'none';
+    }
+    </script>
+    <script language="javascript">
+    function show_div9() {
+        var obj_div = document.getElementById("starlist9");
+        obj_div.style.display = (obj_div.style.display == 'none') ? 'block' : 'none';
+    }
+
+    function hide_div9() {
+        var obj_div = document.getElementById("starlist9");
+        obj_div.style.display = (obj_div.style.display == 'none') ? 'block' : 'none';
+    }
+    </script>
+    <div class="lefter">
+    <div class="nav">
+        <a href="javascript:show_div1()">★★服务器管理★★</a>
+        <div id="starlist1">
+            <a href="/linuxserver/?para=look">查看</a>
+            <a href="/linuxserver/?para=add">服务器添加</a>
+            <a>服务器删除</a>
+        </div>
+        <a href="javascript:show_div2()">★★项目管理★★</a>
+        <div id="starlist2">
+            <a href="/xiangmu/?para=look">查看</a>
+            <a href="/xiangmu/?para=add">项目添加</a>
+            <a>项目删除</a>
+        </div>
+        <a href="javascript:show_div3()">★★数据库管理★★</a>
+        <div id="starlist3">
+            <a href="/sqlser/?para=look">查看</a>
+            <a href="/sqlser/?para=add">数据库添加</a>
+            <a href="/dosqlfile/">上传SQL文件</a>
+            <a href="/runsql/">执行SQL</a>
+        </div>
+        <a href="javascript:show_div4()">★★版本管理★★</a>
+        <div id="starlist4">
+            <a href="/version/?para=look">查看</a>
+            <a href="/version/?para=add">版本添加</a>
+            <a href="/git/?para=add">git版本添加</a>
+            <a>版本删除</a>
+        </div>
+        <a href="javascript:show_div5()">★★软件管理★★</a>
+        <div id="starlist5">
+            <a  href="/soft/?para=look">安装历史</a>
+            <a  href="/soft/?para=install">软件安装</a>
+            <a>软件删除</a>
+        </div>
+        <a href="javascript:show_div6()">★★配置管理★★</a>
+        <div id="starlist6">
+            <a href="/config/?para=look">查看</a>
+            <a href="/config/?para=add">配置添加</a>
+            <a href="/toconfig/?para=add">执行配置</a>
+            <a>配置删除</a>
+        </div>
+        <a href="javascript:show_div7()">★★日志管理★★</a>
+        <div id="starlist7">
+            <a>查看</a>
+            <a>日志添加</a>
+            <a>日志删除</a>
+        </div>
+        <a href="javascript:show_div8()">★★部署管理★★</a>
+        <div id="starlist8">
+            <a>部署历史</a>
+            <a href="/deploy/">上传部署</a>
+            <a href="/git/?para=deploy" >GIT部署</a>
+        </div>
+        <a href="javascript:show_div9()">★★操作历史★★</a>
+        <div id="starlist9">
+            <a>查看</a>
+        </div>
+    </div>
+</div>
+<div class="righter">
+ {% block divright %}
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+
+     <H1>FBI WARNING</H1>
+     <H2> 有些过程需要时间请不要重复提交，请谨慎操作</H2>
+    {% endblock %}
+</div>
+</body>
+
+</html>

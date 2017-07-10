@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+
+{% block divright %}
+
+<form action="/toconfig/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+<table>
+    <tr>
+        <td>选择服务器</td>
+     </tr>
+        {% for i in ini_server %}
+             <tr><td><input type="checkbox" name="server" value="{{ i.ip }}">{{ i.hostname }}</td></tr>
+        {% endfor %}
+   <tr>
+       <td>选择软件</td>
+
+             <tr><td><select name="soft">
+             {% for g in ini_configform %}
+                 <option value="{{ g.softer }}">{{ g.softer }}</option>
+            {% endfor %}
+             </select></td>
+          </tr>
+           <tr>
+              <td> 选择版本:</td>
+           </tr>
+
+             <tr><td><select name="ver">
+                 {% for p in ini_configform %}
+                 <option value="{{ p.ver }}">{{ p.ver }}</option>
+            {% endfor %}
+             </select></td>
+          </tr>
+
+          <tr>
+              <td><input type="reset" value="重置"></td>
+              <td><input type="submit" value="提交"></td>
+          </tr>
+
+
+
+</table>
+</form>
+{% endblock %}
